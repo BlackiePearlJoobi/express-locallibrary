@@ -19,8 +19,7 @@ app.set("port", port);
 const mongoose = require("mongoose");
 
 mongoose.set("strictQuery", false);
-const mongoDB =
-  "mongodb+srv://katze526reiswein:AJJwijDqnlS1VfJu@cluster0.tshtsbs.mongodb.net/local_library?";
+const mongoDB = process.env.MONGODB_URI;
 
 async function connectMongoose() {
   await mongoose.connect(mongoDB);
